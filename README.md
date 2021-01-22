@@ -44,4 +44,6 @@ Project
            feature_file_steps.py
 ```
 **Command to run from terminal:**
-`>behave features\feature_file.feature` 
+```
+ behave features\feature_file.feature   <--|
+``` 
