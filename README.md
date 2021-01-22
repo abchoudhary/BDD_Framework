@@ -32,4 +32,14 @@
     performing action using selenium like validating and asserting
   ```
 
-
+__Project Structure__:
+```
+Project
+  |
+  Features(directory)
+      |
+      feature_file.feature
+      Steps(directory)
+           |
+           feature_file_steps.py
+```
