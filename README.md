@@ -3,9 +3,8 @@
 
 **Behave operates on following directories:**
 * __Feature Files__: written by Business analyst or sponser with behaviour scenarios in it.
-  * Scenarios are written in this file using Gherkin Keywords.
+  * Scenarios are written in this file using Gherkin Keywords. For Example: feature_file.feature
   ```
-  Example: feature_file.feature
   Feature: Name of the feature
     Scenario: Short description
       Given A pre-condition
@@ -13,9 +12,8 @@
       Then  Some outcome
   ```
 * __Steps__: directory with python implementation for the scenarios.
-  * For every step in a scenario, we have to write step definition methods in the steps file.
+  * For every step in a scenario, we have to write step definition methods in the steps file. For Example: feature_file_steps.py
   ```
-  Example: feature_file_steps.py
   from behave import *
   from selenium import webdriver
 
@@ -31,7 +29,6 @@
   def step_impl(context):
     performing action using selenium like validating and asserting
   ```
-
 __Project Structure__:
 ```
 Project
@@ -44,8 +41,8 @@ Project
            feature_file_steps.py
 ```
 **Scenario Outline:**
- ** Used to pass multiple parameters.
- ** It will execute multiple times based on number of parameter provided. For Example:
+ * Used to pass multiple parameters.
+ * It will execute multiple times based on number of parameter provided. For Example:
  ```
  Feature:
   Scenario Outline:
@@ -70,6 +67,23 @@ To execute fixed number of steps before each scenario. For Example:
   And Enter username and password
   And Click login
 ```
+**Tagging:**
+ * You can tag your feature, or part of a feature like a scenario or example part of your scenario outline.
+ * common use case is to tag the scenario you are working on to just test that one case.
+ ```
+  @wip
+  Scenario: Short description
+      Given A pre-condition
+      When  Some event
+      Then  Some outcome
+ ```
+ * To run feature with Tag:
+ ```
+  behave --tags=@wip                       (run feature which is tagged @wip)
+  behave --tags="@wip or @slow"            (run feature which is tagged @wip or tagged @slow)
+  behave --tags="@wip and @slow"           (run feature which is tagged both @wip and @slow)
+  behave --tags=~@wip                      (run all features except @wip)
+ ```
 **Command to run from terminal:**
 ```
  behave features\feature_file.feature   and press Enter
