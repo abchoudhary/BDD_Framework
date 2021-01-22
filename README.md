@@ -43,18 +43,9 @@ Project
            |
            feature_file_steps.py
 ```
-**Command to run from terminal:**
-```
- behave features\feature_file.feature   and press Enter
-```
-**Allure Reports:**
-```
- pip install allure-behave
- To run from terminal: behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
-```
 **Scenario Outline:**
- * Used to pass multiple parameters.
- * It will execute multiple times based on number of parameter provided. For Example:
+ ** Used to pass multiple parameters.
+ ** It will execute multiple times based on number of parameter provided. For Example:
  ```
  Feature:
   Scenario Outline:
@@ -69,4 +60,22 @@ Project
    | admin123 | admin    |
    | adminxyz | admin123 |
    | admin    | adminxyz |
+```
+**Background:**
+To execute fixed number of steps before each scenario. For Example:
+```
+ Background: common steps
+  Given Launch Browser
+  When Open application
+  And Enter username and password
+  And Click login
+```
+**Command to run from terminal:**
+```
+ behave features\feature_file.feature   and press Enter
+```
+**Allure Reports:**
+```
+ pip install allure-behave
+ To run from terminal: behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
 ```
