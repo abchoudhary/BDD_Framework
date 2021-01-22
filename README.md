@@ -13,7 +13,7 @@
       Then  Some outcome
   ```
 * __Steps__: directory with python implementation for the scenarios.
- * For every step in a scenario, we have to write step definition methods in the steps file.
+  * For every step in a scenario, we have to write step definition methods in the steps file.
   ```
   Example: feature_file_steps.py
   from behave import *
@@ -30,6 +30,6 @@
   @then("Some outcome")
   def step_impl(context):
     performing action using selenium like validating and asserting
- ```
+  ```
 
 
