@@ -91,5 +91,7 @@ To execute fixed number of steps before each scenario. For Example:
 **Allure Reports:**
 ```
  Installation: pip install allure-behave
- To run from terminal: behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
+ To run from terminal: behave -f allure-behave.formatter:AllureFormatter -o reports/  Features/
 ```
+* json files will be generated in the reports folder. Run `allure serve reports_directory_path` command to generate and open report in your browser.
+
