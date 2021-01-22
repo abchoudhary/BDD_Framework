@@ -45,5 +45,12 @@ Project
 ```
 **Command to run from terminal:**
 ```
- behave features\feature_file.feature   <--|
-``` 
+ behave features\feature_file.feature   and press Enter
+```
+**Allure Reports:**
+```
+ pip install allure-behave
+ __To run from terminal:__
+ behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
+```
+
