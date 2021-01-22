@@ -2,7 +2,7 @@
 **Behaviour driven development is an agile software development technique that encourages collaboration between developers, QA and non-technical business participants in a software project.**
 
 **Behave operates on following directories:**
-* __Feature Files__: written by Business analyst or sponser with behaviour scenarios in it.
+* __Feature Files__: Written by Business analysts or sponsers with behaviour scenarios in it.
   * Scenarios are written in this file using Gherkin Keywords. For Example: feature_file.feature
   ```
   Feature: Name of the feature
@@ -11,7 +11,7 @@
       When  Some event
       Then  Some outcome
   ```
-* __Steps__: directory with python implementation for the scenarios.
+* __Steps__: Directory with python implementation for the scenarios.
   * For every step in a scenario, we have to write step definition methods in the steps file. For Example: feature_file_steps.py
   ```
   from behave import *
@@ -44,15 +44,15 @@ Project
  * Used to pass multiple parameters.
  * It will execute multiple times based on number of parameter provided. For Example:
  ```
- Feature:
-  Scenario Outline:
-   Given
-   When
-   And
-   And
-   Then
+ Feature: Orange HRM Login
+  Scenario Outline: Login to Orange HRM with multiple parameters
+   Given Launch chrome browser
+   When Open Orange HRM homepage
+   And Enter username "<username>" and password "<password>"
+   And Click on login button
+   Then User must successfully login to the dashboard
    Examples:
-   | Username | Password |
+   | username | password |
    | admin    | admin123 |
    | admin123 | admin    |
    | adminxyz | admin123 |
@@ -86,10 +86,10 @@ To execute fixed number of steps before each scenario. For Example:
  ```
 **Command to run from terminal:**
 ```
- behave features\feature_file.feature   and press Enter
+ behave features\feature_file.feature
 ```
 **Allure Reports:**
 ```
- pip install allure-behave
+ Installation: pip install allure-behave
  To run from terminal: behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
 ```
