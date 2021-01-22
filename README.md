@@ -50,7 +50,23 @@ Project
 **Allure Reports:**
 ```
  pip install allure-behave
- __To run from terminal:__
- behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
+ To run from terminal: behave -f allure-behave.formatter:AllureFormatter -o Reports/  Features/
 ```
-
+**Scenario Outline:**
+ * Used to pass multiple parameters.
+ * It will execute multiple times based on number of parameter provided. For Example:
+ ```
+ Feature:
+  Scenario Outline:
+   Given
+   When
+   And
+   And
+   Then
+   Examples:
+   | Username | Password |
+   | admin    | admin123 |
+   | admin123 | admin    |
+   | adminxyz | admin123 |
+   | admin    | adminxyz |
+```
